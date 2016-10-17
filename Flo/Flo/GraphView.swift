@@ -17,6 +17,14 @@ class GraphView: UIView {
     
     override func draw(_ rect: CGRect) {
         
+        let width = rect.width
+        let height = rect.height
+        
+        var path = UIBezierPath(roundedRect: rect,
+            byRoundingCorners: UIRectCorner.allCorners,
+            cornerRadii: CGSize(width: 8.0, height: 8.0))
+        path.addClip()
+        
         //2 - get the current context
         let context = UIGraphicsGetCurrentContext()
         let colors = [startColor.cgColor, endColor.cgColor]
