@@ -29,6 +29,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnPushButtonWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bMa-jR-Jx8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGC-Xh-s78" customClass="PushButtonView" customModule="Flo" customModuleProvider="target">
                                 <constraints>
@@ -41,6 +44,9 @@
                                         <color key="value" red="0.93333333333333335" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnPushButtonWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RMu-Uv-sJ8"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PfD-WV-E7D" customClass="CounterView" customModule="Flo" customModuleProvider="target">
                                 <subviews>
@@ -81,6 +87,10 @@
                             <constraint firstItem="RGC-Xh-s78" firstAttribute="top" secondItem="sCE-TF-KnB" secondAttribute="bottom" constant="30" id="sjR-YS-F2r"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="counterLabel" destination="RWK-sO-h6B" id="kcU-0D-TuC"/>
+                        <outlet property="counterView" destination="PfD-WV-E7D" id="fUr-fq-s1e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
