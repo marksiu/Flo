@@ -11,6 +11,9 @@ import UIKit
 
 class GraphView: UIView {
 
+    //Weekly sample data
+    var graphPoints:[Int] = [4, 2, 6, 4, 5, 8, 3]
+    
     //1 - the properties for the gradient
     @IBInspectable var startColor: UIColor = UIColor.red
     @IBInspectable var endColor: UIColor = UIColor.green
@@ -47,6 +50,62 @@ class GraphView: UIView {
                                     start: startPoint,
                                     end: endPoint,
                                     options: CGGradientDrawingOptions(rawValue: UInt32(0)))
+        
+        //calculate the x point
+        let margin:CGFloat = 20.0
+        var columnXPoint = { (column:Int) -> CGFloat in
+            //Calculate gap between points
+            let spacer = (width - margin*2 - 4) /
+                CGFloat((self.graphPoints.count - 1))
+            var x:CGFloat = CGFloat(column) * spacer
+            x += margin + 2
+            return x
+        }
+        
+        let topBorder:CGFloat = 60
+        let bottomBorder:CGFloat = 50
+        let graphHeight = height - topBorder - bottomBorder
+        let maxValue = graphPoints.max()
+        var columnYPoint = { (graphPoint:Int) -> CGFloat in
+            
+            
+            // assume the 0 is on the bottom
+            var y:CGFloat = CGFloat(graphPoint) /
+                CGFloat(maxValue!) * graphHeight
+            
+            // the real display 0 is on the top
+            // (0,0)(1,0)(2,0)(3,0)
+            // (0,1)(1,1)(2,1)(3,1)
+            // (0,2)(1,2)(2,2)(3,2)
+            // so it has to revise the value
+            // (graphHeight - y) is to revise the value
+            // 0 --> top
+            // top --> 0
+            
+            // + topBorder is used to
+            y = (graphHeight - y) + topBorder // Flip the graph
+            return y
+        }
+        
+        // draw the line graph
+        UIColor.white.setFill()
+        UIColor.white.setStroke()
+        
+        //set up the points line
+        var graphPath = UIBezierPath()
+        //go to start of line
+        graphPath.move(to: CGPoint(x:columnXPoint(0),
+                                   y:columnYPoint(graphPoints[0])))
+        
+        //add points for each item in the graphPoints array
+        //at the correct (x, y) for the point
+        for i in 1..<graphPoints.count {
+            let nextPoint = CGPoint(x:columnXPoint(i),
+                                    y:columnYPoint(graphPoints[i]))
+            graphPath.addLine(to: nextPoint)
+        }
+        
+        graphPath.stroke()
     }
 
 }
