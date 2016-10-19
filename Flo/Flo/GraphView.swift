@@ -110,7 +110,7 @@ class GraphView: UIView {
         //Create the clipping path for the graph gradient
         
         //1 - save the state of the context (commented out for now)
-        //CGContextSaveGState(context)
+        context!.saveGState()
         
         //2 - make a copy of the path
         var clippingPath = graphPath.copy() as! UIBezierPath
@@ -136,9 +136,23 @@ class GraphView: UIView {
                                     end: endPoint,
                                     options: CGGradientDrawingOptions(rawValue: UInt32(0)))
         
+        context!.restoreGState()
+        
         //draw the line on top of the clipped gradient
         graphPath.lineWidth = 2.0
         graphPath.stroke()
+        
+        //Draw the circles on top of graph stroke
+        for i in 0..<graphPoints.count {
+            var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
+            point.x -= 5.0/2
+            point.y -= 5.0/2
+            
+            let circle = UIBezierPath(ovalIn: CGRect(origin: point,
+                                                     size: CGSize(width: 5.0,
+                                                                  height: 5.0)))
+            circle.fill()
+        }
     }
 
 }
