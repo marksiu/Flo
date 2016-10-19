@@ -106,6 +106,39 @@ class GraphView: UIView {
         }
         
         graphPath.stroke()
+        
+        //Create the clipping path for the graph gradient
+        
+        //1 - save the state of the context (commented out for now)
+        //CGContextSaveGState(context)
+        
+        //2 - make a copy of the path
+        var clippingPath = graphPath.copy() as! UIBezierPath
+        
+        //3 - add lines to the copied path to complete the clip area
+        clippingPath.addLine(to: CGPoint(
+            x: columnXPoint(graphPoints.count - 1),
+            y:height))
+        clippingPath.addLine(to: CGPoint(
+            x:columnXPoint(0),
+            y:height))
+        clippingPath.close()
+        
+        //4 - add the clipping path to the context
+        clippingPath.addClip()
+        
+        let highestYPoint = columnYPoint(maxValue!)
+        startPoint = CGPoint(x:margin, y: highestYPoint)
+        endPoint = CGPoint(x:margin, y:self.bounds.height)
+        
+        context!.drawLinearGradient(gradient!,
+                                    start: startPoint,
+                                    end: endPoint,
+                                    options: CGGradientDrawingOptions(rawValue: UInt32(0)))
+        
+        //draw the line on top of the clipped gradient
+        graphPath.lineWidth = 2.0
+        graphPath.stroke()
     }
 
 }
