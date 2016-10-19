@@ -153,6 +153,31 @@ class GraphView: UIView {
                                                                   height: 5.0)))
             circle.fill()
         }
+        
+        //Draw horizontal graph lines on the top of everything
+        var linePath = UIBezierPath()
+        
+        //top line
+        linePath.move(to: CGPoint(x:margin, y: topBorder))
+        linePath.addLine(to: CGPoint(x: width - margin,
+                                     y:topBorder))
+        
+        //center line
+        linePath.move(to: CGPoint(x:margin,
+                                  y: graphHeight/2 + topBorder))
+        linePath.addLine(to: CGPoint(x:width - margin,
+                                     y:graphHeight/2 + topBorder))
+        
+        //bottom line
+        linePath.move(to: CGPoint(x:margin,
+                                  y:height - bottomBorder))
+        linePath.addLine(to: CGPoint(x:width - margin,
+                                     y:height - bottomBorder))
+        let color = UIColor(white: 1.0, alpha: 0.3)
+        color.setStroke()
+        
+        linePath.lineWidth = 1.0
+        linePath.stroke()
     }
 
 }
