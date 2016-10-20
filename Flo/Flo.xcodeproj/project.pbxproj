@@ -15,6 +15,7 @@
 		3A71F6621DB3AB1200814B6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A71F6601DB3AB1200814B6B /* LaunchScreen.storyboard */; };
 		3A71F66A1DB3AB8E00814B6B /* PushButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71F6691DB3AB8E00814B6B /* PushButtonView.swift */; };
 		3A71F66C1DB3D5CF00814B6B /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71F66B1DB3D5CF00814B6B /* CounterView.swift */; };
+		3AE86AD21DB85E8D006198F4 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE86AD11DB85E8D006198F4 /* BackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3A71F6631DB3AB1200814B6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A71F6691DB3AB8E00814B6B /* PushButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushButtonView.swift; sourceTree = "<group>"; };
 		3A71F66B1DB3D5CF00814B6B /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		3AE86AD11DB85E8D006198F4 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				3A71F6691DB3AB8E00814B6B /* PushButtonView.swift */,
 				3A71F66B1DB3D5CF00814B6B /* CounterView.swift */,
 				3A33C3021DB48269007109FE /* GraphView.swift */,
+				3AE86AD11DB85E8D006198F4 /* BackgroundView.swift */,
 			);
 			path = Flo;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AE86AD21DB85E8D006198F4 /* BackgroundView.swift in Sources */,
 				3A33C3031DB48269007109FE /* GraphView.swift in Sources */,
 				3A71F65A1DB3AB1200814B6B /* ViewController.swift in Sources */,
 				3A71F66A1DB3AB8E00814B6B /* PushButtonView.swift in Sources */,
