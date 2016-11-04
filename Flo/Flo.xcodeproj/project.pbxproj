@@ -16,6 +16,7 @@
 		3A71F66A1DB3AB8E00814B6B /* PushButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71F6691DB3AB8E00814B6B /* PushButtonView.swift */; };
 		3A71F66C1DB3D5CF00814B6B /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71F66B1DB3D5CF00814B6B /* CounterView.swift */; };
 		3AE86AD21DB85E8D006198F4 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE86AD11DB85E8D006198F4 /* BackgroundView.swift */; };
+		9B6088AF1DCC44C800BF5D48 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6088AE1DCC44C800BF5D48 /* Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3A71F6691DB3AB8E00814B6B /* PushButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushButtonView.swift; sourceTree = "<group>"; };
 		3A71F66B1DB3D5CF00814B6B /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		3AE86AD11DB85E8D006198F4 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		9B6088AE1DCC44C800BF5D48 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				3A71F66B1DB3D5CF00814B6B /* CounterView.swift */,
 				3A33C3021DB48269007109FE /* GraphView.swift */,
 				3AE86AD11DB85E8D006198F4 /* BackgroundView.swift */,
+				9B6088AE1DCC44C800BF5D48 /* Layout.swift */,
 			);
 			path = Flo;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				3A33C3031DB48269007109FE /* GraphView.swift in Sources */,
 				3A71F65A1DB3AB1200814B6B /* ViewController.swift in Sources */,
 				3A71F66A1DB3AB8E00814B6B /* PushButtonView.swift in Sources */,
+				9B6088AF1DCC44C800BF5D48 /* Layout.swift in Sources */,
 				3A71F6581DB3AB1200814B6B /* AppDelegate.swift in Sources */,
 				3A71F66C1DB3D5CF00814B6B /* CounterView.swift in Sources */,
 			);
